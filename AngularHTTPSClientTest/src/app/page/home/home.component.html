@@ -1,0 +1,23 @@
+<form class="w3-content" ngForm #myForm="ngForm" (ngSubmit)="summit()">
+  <label>ID</label>
+  <input class="w3-input w3-border" appMySimpleValidator
+         type="text" name="id" ngModel #id="ngModel" required/>
+  <p class="w3-red" *ngIf="id.invalid && id.touched">
+    Id is required!
+  </p>
+  <p class="w3-red" *ngIf="id.errors != null && id.errors.unvalidName && id.touched">
+    This name is not allowed!
+  </p>
+  <label>Email</label>
+  <input class="w3-input w3-border" type="email" name="name" ngModel required email/>
+  <label>Phone</label>
+  <input class="w3-input w3-border" type="text" name="phone" ngModel required/>
+  <label>Detail</label>
+  <textarea class="w3-input w3-border" ngModel name="detail" required></textarea>
+  <div>
+    <p class="w3-text-red" *ngIf="myForm.invalid && myForm.touched"> * are required.</p>
+  </div>
+  <div class="w3-padding">
+    <button [disabled]="myForm.invalid" type="submit" class="w3-button w3-green"> Save </button>
+  </div>
+</form>

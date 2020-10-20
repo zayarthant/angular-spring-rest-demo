@@ -1,0 +1,10 @@
+<div class="w3-container" *ngIf="student !== undefined">
+  <p>Detail Information</p>
+  <h1>Name : {{student.email}}</h1>
+  <p>Phone : {{student.phone}}</p>
+  <p>Phone : {{student.detail}}</p>
+</div>
+<div *ngIf="isLoading">
+  <h1>Loading....</h1>
+  <p>Please Wait A Moment,</p>
+</div>

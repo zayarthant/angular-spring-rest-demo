@@ -1,0 +1,14 @@
+<div>
+  <div class="w3-half">
+    <div class="w3-padding">
+       <div id="studentElemnet" *ngFor="let s of students" class="w3-card w3-margin-bottom">
+         <a routerLink="/students/{{s.id}}">
+           <app-student [student]="s"></app-student>
+         </a>
+       </div>
+    </div>
+  </div>
+  <div class="w3-half">
+    <router-outlet></router-outlet>
+  </div>
+</div>

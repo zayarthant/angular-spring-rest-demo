@@ -1,0 +1,19 @@
+<div class="w3-container">
+  <form class="w3-form" [formGroup]="mailForm" (ngSubmit)="onSummit()">
+    <input type="text" class="w3-input" placeholder="Name" formControlName="name"/>
+    <p  class="w3-text-red" *ngIf="mailForm.controls.name.invalid">
+      Name is required!
+    </p>
+    <input type="email" class="w3-input" placeholder="Email" formControlName="email"/>
+    <p  class="w3-text-red" *ngIf="mailForm.controls.email.invalid">
+      Email is required!
+    </p>
+    <input typet="text" class="w3-input" placeholder="Content" formControlName="content"/>
+    <p  class="w3-text-red" *ngIf="mailForm.controls.content.invalid">
+      Content is required!
+    </p>
+    <p>
+      <button [disabled]="mailForm.invalid" class="w3-green w3-button" type="submit"> Send Mail </button>
+    </p>
+  </form>
+</div>
